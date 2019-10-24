@@ -1,3 +1,4 @@
-import validator from './validator.js';
+// import validator from './validator.js';
 
-console.log(validator);
+console.log(window.validator.isValid('8545'));
+
