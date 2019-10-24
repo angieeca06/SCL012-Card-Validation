@@ -1,4 +1,4 @@
 // import validator from './validator.js';
 
-console.log(window.validator.isValid('8545'));
+console.log(window.validator.isValid('8545458523145986'));
 
