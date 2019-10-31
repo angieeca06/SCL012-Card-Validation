@@ -1,4 +1,4 @@
-window.validator = {
+const validator = {
 
   pullPairNumbers: (targetNumberArray) => {
     let pairNumbers = [];
@@ -12,7 +12,7 @@ window.validator = {
   
   multiplyNumbers: (pairNumbers) => {
     const numbersMultiplied = [];
-    pairNumbers.map((numbers, i) => { 
+    pairNumbers.map((numbers) => { 
       numbersMultiplied.push(numbers * 2);
     });
     return numbersMultiplied
@@ -21,7 +21,7 @@ window.validator = {
   sumOfTwoOrMoreDigits: (multipliedNumbers) => {
     let sum = 0;
     const allNumbersSum = [];
-    multipliedNumbers.map((numbers, i) => {
+    multipliedNumbers.map((numbers) => {
       const numberOfDigits = numbers.toString();
       if(numberOfDigits.length > 1){
         let arrayOfTwoOrMoreDigits = Array.from(numberOfDigits);
@@ -43,15 +43,13 @@ window.validator = {
   
   isValid: (targetNumber) =>{
     const targetNumberArray = targetNumber.split('')
-      if(targetNumberArray.length < 16 ){
-        console.log('Completa a 16 digitos')
-      }else{
-        let pairNumbers = validator.pullPairNumbers(targetNumber);
+        let pairNumbers = validator.pullPairNumbers(targetNumberArray);
         let multipliedNumbers = validator.multiplyNumbers(pairNumbers);
         let sumOfTwoOrMoreDigits = validator.sumOfTwoOrMoreDigits(multipliedNumbers);
         let resultSum = validator.sumAllTargetNumbers(sumOfTwoOrMoreDigits);
-        console.log(typeof resultSum)
+        console.log(resultSum)
         return resultSum
-      }
   }
 };
+
+export default validator;

@@ -1,4 +1,3 @@
-// importamos el objeto `validator`, que contiene la función `isValid`
 import validator from "../src/validator";
 
 describe('validator', () => {
